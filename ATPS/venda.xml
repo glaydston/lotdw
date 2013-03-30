@@ -2,14 +2,13 @@
 <!DOCTYPE vendas SYSTEM "venda.dtd">
 <?xml-stylesheet type="text/css" href="venda.css"?>
 <vendas>
-	<venda>
-		<id>010</id>
+	<venda id="010">
 		<produto>
 			<nome>Vassoura Lindaura</nome>
 			<modelo>XYZ</modelo>
 			<material>
-				<cabo>Madeira Comum</cabo>
-				<cerda>Plástico Macio</cerda>
+				<cabo value="Madeira"/>
+				<cerda value="Plástico"/>
 			</material>
 			<comprimento>
 				<cabo>1,40</cabo>
@@ -21,18 +20,17 @@
 				<desconto>1.00</desconto>
 			</valor>
 		</produto>
-		<quantidade>01</quantidade>
-		<vendedor>Alexandre Pinheiro</vendedor>
-		<loja>
-		<![CDATA[Centro1]]>
-		</loja>
+		<quantidade value="01" />
+		<vendedor name="Alexandre Pinheiro" />
+		<loja name="Centro1" />
 		<cliente>
-			<nome>
-			<![CDATA[Agnaldo Ribeiro Martins]]>
-			</nome>
-			<endereco>
-			<![CDATA[Rua c4, 100 Parque São João - Contagem - MG]]>
-			</endereco>
+			<nome>Agnaldo Ribeiro Martins</nome>
+			<endereco 
+				state="MG"
+				number="100"
+				street="Rua c4"  
+				district="Parque São João" 
+				city="Contagem" />
 		</cliente>
 	</venda>
 </vendas>

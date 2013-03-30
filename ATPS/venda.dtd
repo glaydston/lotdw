@@ -1,28 +1,61 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE vendas [
-	<!ELEMENT venda(id, produto, quantidade, vendedor, loja, cliente )>
-	<!ATTLIST venda id ID #REQUIRED>
-	<!ELEMENT venda produto (produto+)>
-	<!ELEMENT produto (nome+, modelo+, material+, comprimento+, valor+)>
-	<!ATTLIST produto nome  ID #REQUIRED>
-	<!ATTLIST produto modelo CDATA #IMPLIED>
-	<!ELEMENT produto material(cabo+, cerda+) >
-	<!ATTLIST material cabo NMTOKEN #IMPLIED>
-	<!ELEMENT cabo ( aço | alumínio | madeira )>
-	<!ATTLIST material cerda NMTOKEN #IMPLIED>
-	<!ELEMENT cerda (plástico | piaçava | pêlo)>
-	<!ATTLIST produto comprimento(cabo+, cerda+, total+)>
-	<!ATTLIST comprimento cabo NMTOKEN #IMPLIED>
-	<!ATTLIST comprimento cerda NMTOKEN #IMPLIED>
-	<!ATTLIST comprimento total NMTOKEN #REQUIRED>
-	<!ELEMENT produto valor (total+, desconto+)>
-	<!ATTLIST valor total NMTOKEN #REQUIRED>
-	<!ATTLIST valor desconto NMTOKEN #REQUIRED>
-	<!ATTLIST quantidade NMTOKEN #REQUIRED>
-	<!ATTLIST vendedor CDATA #REQUIRED>
-	<!ATTLIST loja CDATA #REQUIRED>
-	<!ELEMENT loja ( Centro 1 | Savassi | Buritis | Venda Nova)>
-	<!ELEMENT vendas cliente(nome ?, endereço?)>
-	<!ATTLIST cliente nome CDATA #IMPLIED>
-	<!ATTLIST cliente endereço CDATA #IMPLIED>
-]>
+	
+<!ELEMENT vendas (venda+)>	
+<!ELEMENT venda ( produto, quantidade, vendedor, loja, cliente)>
+
+<!-- Atribute' venda -->
+<!ATTLIST venda id ID #REQUIRED>
+
+<!-- Children's venda -->
+<!ELEMENT produto (nome, modelo, material, comprimento, valor)>
+
+	<!-- Children's produto -->
+	<!ELEMENT nome (#PCDATA)>
+	<!ELEMENT modelo (#PCDATA)>
+	<!ELEMENT material (cabo, cerda)>
+	
+		<!-- Children's material -->
+		<!ELEMENT cabo>
+		<!-- Atribute' cabo -->
+		<!ATTLIST cabo value (Aço | Alumínio | Madeira) "Madeira">
+		
+		<!ELEMENT cerda>
+		<!-- Atribute' cerda -->
+		<!ATTLIST cabo value (Plástico | Piaçava | Pêlo) "Plástico">
+		
+	<!ELEMENT comprimento (cabo, cerda, total)>
+		
+		<!-- Children's comprimento -->
+		<!ELEMENT cabo (#PCDATA)>
+		<!ELEMENT cerda (#PCDATA)>
+		<!ELEMENT total (#PCDATA)>
+	
+	<!ELEMENT valor (total, desconto)>
+	
+		<!-- Children's valor -->
+		<!ELEMENT cerda (#PCDATA)>
+		<!ELEMENT total (#PCDATA)>
+		
+<!ELEMENT quantidade>
+<!-- Atribute' quantidade -->
+<!ATTLIST quantidade value NMTOKEN #REQUIRED>
+
+<!ELEMENT vendedor>
+<!-- Atribute' vendedor -->
+<!ATTLIST vendedor name #CDATA #REQUIRED>
+
+<!ELEMENT loja>
+<!-- Atribute' loja -->
+<!ATTLIST loja name (Centro 1 | Savassi | Buritis | Venda Nova) "Centro 1">
+
+<!ELEMENT cliente (nome, endereco)>
+	<!-- Children's cliente -->
+	<!ELEMENT nome (#PCDATA)>
+	<!ELEMENT endereco>
+	
+	<!-- Atribute' endereco -->
+	<!ATTLIST endereco number NMTOKEN #REQUIRED>
+	<!ATTLIST endereco state NMTOKEN #REQUIRED>
+	<!ATTLIST endereco street CDATA #REQUIRED>
+	<!ATTLIST endereco district CDATA #REQUIRED>
+	<!ATTLIST endereco city CDATA #REQUIRED>
+	 
