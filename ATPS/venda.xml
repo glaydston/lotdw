@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE vendas SYSTEM “venda.dtd”>
+<!DOCTYPE vendas SYSTEM "venda.dtd">
+<?xml-stylesheet type="text/css" href="venda.css"?>
 <vendas>
 	<venda>
 		<id>010</id>
