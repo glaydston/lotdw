@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE vendas [
+	<!ELEMENT venda(id, produto, quantidade, vendedor, loja, cliente )>
+	<!ATTLIST venda id ID #REQUIRED>
+	<!ELEMENT venda produto (produto+)>
+	<!ELEMENT produto (nome+, modelo+, material+, comprimento+, valor+)>
+	<!ATTLIST produto nome  ID #REQUIRED>
+	<!ATTLIST produto modelo CDATA #IMPLIED>
+	<!ELEMENT produto material(cabo+, cerda+) >
+	<!ATTLIST material cabo NMTOKEN #IMPLIED>
+	<!ELEMENT cabo ( aço | alumínio | madeira )>
+	<!ATTLIST material cerda NMTOKEN #IMPLIED>
+	<!ELEMENT cerda (plástico | piaçava | pêlo)>
+	<!ATTLIST produto comprimento(cabo+, cerda+, total+)>
+	<!ATTLIST comprimento cabo NMTOKEN #IMPLIED>
+	<!ATTLIST comprimento cerda NMTOKEN #IMPLIED>
+	<!ATTLIST comprimento total NMTOKEN #REQUIRED>
+	<!ELEMENT produto valor (total+, desconto+)>
+	<!ATTLIST valor total NMTOKEN #REQUIRED>
+	<!ATTLIST valor desconto NMTOKEN #REQUIRED>
+	<!ATTLIST quantidade NMTOKEN #REQUIRED>
+	<!ATTLIST vendedor CDATA #REQUIRED>
+	<!ATTLIST loja CDATA #REQUIRED>
+	<!ELEMENT loja ( Centro 1 | Savassi | Buritis | Venda Nova)>
+	<!ELEMENT vendas cliente(nome ?, endereço?)>
+	<!ATTLIST cliente nome CDATA #IMPLIED>
+	<!ATTLIST cliente endereço CDATA #IMPLIED>
+]>

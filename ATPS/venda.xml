@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE vendas SYSTEM “venda.dtd”>
+<vendas>
+	<venda>
+		<id>010</id>
+		<produto>
+			<nome>Vassoura Lindaura</nome>
+			<modelo>XYZ</modelo>
+			<material>
+				<cabo>Madeira Comum</cabo>
+				<cerda>Plástico Macio</cerda>
+			</material>
+			<comprimento>
+				<cabo>1,40</cabo>
+				<cerda>20</cerda>
+				<total>1,60</total>
+			</comprimento>
+			<valor>
+				<total>10.00</total>
+				<desconto>1.00</desconto>
+			</valor>
+		</produto>
+		<quantidade>01</quantidade>
+		<vendedor>Alexandre Pinheiro</vendedor>
+		<loja>
+		<![CDATA[Centro1]]>
+		</loja>
+		<cliente>
+			<nome>
+			<![CDATA[Agnaldo Ribeiro Martins]]>
+			</nome>
+			<endereco>
+			<![CDATA[Rua c4, 100 Parque São João - Contagem - MG]]>
+			</endereco>
+		</cliente>
+	</venda>
+</vendas>
